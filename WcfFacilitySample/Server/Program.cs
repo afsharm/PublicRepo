@@ -9,7 +9,11 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("here");
+            Console.WriteLine("Welcome to WCF Server");
+
+            ServiceManager.StartService();
+
+            Console.WriteLine("Press RETURN to stop server");
             Console.ReadLine();
         }
     }
