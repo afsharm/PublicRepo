@@ -21,7 +21,7 @@ namespace Server
                     .DependsOn(new { number = 42 })
                     .AsWcfService(new DefaultServiceModel().AddEndpoints(
                             WcfEndpoint.BoundTo(new NetTcpBinding { PortSharingEnabled = true })
-                                .At("net.tcp://localhost/DateService")
+                                .At("net.tcp://localhost:8063/DateService")
                                ).PublishMetadata()
                 ));
         }

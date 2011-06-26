@@ -9,6 +9,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
+            string result = ClientManager.InvokeWcfService("net.tcp://localhost:8063/DateService");
         }
     }
 }
