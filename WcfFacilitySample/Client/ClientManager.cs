@@ -12,7 +12,7 @@ namespace Client
 {
     public class ClientManager
     {
-        public static string InvokeWcfService(string serviceAddress)
+        public static string InvokeWcfService()
         {
             var container = new WindsorContainer().AddFacility<WcfFacility>();
 
@@ -20,7 +20,7 @@ namespace Client
                 .For<IDateService>()
                 .AsWcfClient(DefaultClientModel
                 .On(WcfEndpoint.BoundTo(new NetTcpBinding())
-                .At(serviceAddress)))
+                .At("net.tcp://localhost:8063/DateService")))
                 .LifeStyle.Transient
                 );
 
